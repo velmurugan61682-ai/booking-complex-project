@@ -1,8 +1,11 @@
 import { useState } from 'react';
-import { shops } from '../data/shops';
+import { useBooking } from '../context/BookingContext';
 import ShopCard from '../components/ShopCard';
 
 const ShopListPage = () => {
+    const { shops } = useBooking();
+    const [filterCategory, setFilterCategory] = useState([]);
+
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="flex flex-col md:flex-row gap-8">

@@ -8,7 +8,7 @@ const ShopCard = ({ shop }) => {
                     {shop.category}
                 </div>
                 <img
-                    src={shop.image}
+                    src={shop.images ? shop.images[0] : shop.image}
                     alt={shop.name}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -28,8 +28,8 @@ const ShopCard = ({ shop }) => {
                         </p>
                     </div>
                     <div className="text-right">
-                        <p className="text-indigo-600 font-bold text-xl">${shop.price}</p>
-                        <p className="text-slate-400 text-xs">/day</p>
+                        <p className="text-indigo-600 font-bold text-xl">₹{shop.price.toLocaleString('en-IN')}</p>
+                        <p className="text-slate-400 text-xs">/month</p>
                     </div>
                 </div>
 

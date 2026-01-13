@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
-import { shops } from '../data/shops';
+import { useBooking } from '../context/BookingContext';
 import ShopCard from '../components/ShopCard';
 import SearchBar from '../components/SearchBar';
 import Testimonials from '../components/Testimonials';
 
 const HomePage = () => {
+    const { shops } = useBooking();
     const featuredShops = shops.slice(0, 3);
 
     const categories = [
