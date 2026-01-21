@@ -8,143 +8,228 @@ export const useBooking = () => useContext(BookingContext);
 const INITIAL_SHOPS = [
     {
         id: 1,
-        name: "Modern 2BHK in Anna Nagar",
-        location: "Anna Nagar, Chennai",
-        price: 25000,
-        rating: 4.8,
+        name: "Luxury IT Park Office in OMR",
+        location: "OMR, Chennai",
+        price: 85000,
+        category: "IT Office",
+        rating: 4.9,
         images: [
-            "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
-            "https://images.unsplash.com/photo-1484154218962-a1c002085d2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
-            "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+            "https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
         ],
-        description: "Spacious 2BHK apartment in the prime locality of Anna Nagar. Close to metro station and shopping malls.",
-        amenities: ["WiFi", "Car Parking", "24/7 Water", "Security", "Lift"]
+        description: "Premium office space in the heart of Chennai's IT corridor. Fully furnished with conference rooms and high-speed internet.",
+        amenities: ["Central AC", "Server Room", "Cafeteria", "24/7 Power", "Security"]
     },
     {
         id: 2,
-        name: "Independent House in Gandhipuram",
-        location: "Gandhipuram, Coimbatore",
-        price: 18000,
-        rating: 4.7,
+        name: "Tidel Park Worksphere",
+        location: "Taramani, Chennai",
+        price: 120000,
+        category: "IT Office",
+        rating: 5.0,
         images: [
-            "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
-            "https://images.unsplash.com/photo-1599619351208-3e6c839d6828?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
-            "https://images.unsplash.com/photo-1560444586-4f3661ecd64c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+            "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
         ],
-        description: "Beautiful independent house with a small garden. Ideal for families looking for a peaceful neighborhood.",
-        amenities: ["Garden", "RO Water", "Power Backup", "Covered Parking"]
+        description: "State-of-the-art office complex in the iconic Tidel Park. Ideal for software startups and established MNCs.",
+        amenities: ["Metro Access", "Food Court", "Auditorium", "Gym", "Parking"]
     },
     {
         id: 3,
-        name: "Traditional Chettinad Home",
-        location: "KK Nagar, Madurai",
-        price: 22000,
-        rating: 4.9,
+        name: "Elite Men's Hostel",
+        location: "Peelamedu, Coimbatore",
+        price: 8000,
+        category: "Hostel",
+        rating: 4.5,
         images: [
-            "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
-            "https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
-            "https://images.unsplash.com/photo-1512918760532-3edbed13588e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+            "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1522771753035-7a5887592a84?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
         ],
-        description: "Experience the heritage of Madurai in this Chettinad style home with modern amenities. Near Meenakshi Temple.",
-        amenities: ["Veranda", "Traditional Courtyard", "AC", "WiFi"]
+        description: "Comfortable and affordable hostel for students and working professionals near TIDEL Park Coimbatore. Hygienic food provided.",
+        amenities: ["WiFi", "3 Times Food", "Hot Water", "Washing Machine", "CCTV"]
     },
     {
         id: 4,
-        name: "Apartment near Rockfort",
+        name: "Tech Hub Coworking",
         location: "Thillai Nagar, Trichy",
         price: 15000,
-        rating: 4.5,
+        category: "Coworking",
+        rating: 4.6,
         images: [
-            "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
-            "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
-            "https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+            "https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
         ],
-        description: "Centrally located flat in Thillai Nagar. Easy access to bus stand and railway station.",
-        amenities: ["Lift", "Security", "CCTV", "Water Heater"]
+        description: "Modern coworking space for freelancers and remote teams. Located in the commercial center of Trichy.",
+        amenities: ["High-Speed WiFi", "Unlimited Coffee", "Meeting Rooms", "Printer"]
     },
     {
         id: 5,
-        name: "Hill View Villa",
-        location: "Yercaud Foot Hills, Salem",
-        price: 28000,
+        name: "Serene Women's Hostel",
+        location: "Sholinganallur, Chennai",
+        price: 9500,
+        category: "Hostel",
         rating: 4.8,
         images: [
-            "https://images.unsplash.com/photo-1449156493391-d2cfa28e468b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
-            "https://images.unsplash.com/photo-1510798831971-661eb04b3739?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
-            "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+            "https://images.unsplash.com/photo-1629140727571-9b5c6f6267b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1484154218962-a1c002085d2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
         ],
-        description: "Luxury villa with stunning hill views. Perfect for a relaxing stay with high-end facilities.",
-        amenities: ["Private Pool", "Gym", "Landscaped Garden", "WiFi"]
+        description: "Safe and secure hostel for working women in OMR. Close to major IT companies like Infosys and TCS.",
+        amenities: ["Biometric Entry", "AC Rooms", "Homemade Food", "Security Guard", "Transport"]
     },
     {
         id: 6,
-        name: "Cozy Home for Family",
-        location: "Perundurai Road, Erode",
-        price: 12000,
+        name: "Startup Studio Space",
+        location: "Anna Nagar, Madurai",
+        price: 25000,
+        category: "IT Office",
         rating: 4.4,
         images: [
-            "https://images.unsplash.com/photo-1580587771525-78b9dba3b91d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
-            "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
-            "https://images.unsplash.com/photo-1484154218962-a1c002085d2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+            "https://images.unsplash.com/photo-1604328698692-f76ea9498e76?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
         ],
-        description: "Affordable and cozy home in Erode, perfect for small families. Quiet neighborhood.",
-        amenities: ["Borewell Water", "Car Parking", "Near School", "Terrace"]
+        description: "Creative office studio for design and tech startups. Inspiring environment with breakout zones.",
+        amenities: ["Lounge Area", "Projector", "Gaming Zone", "Pantry"]
     },
     {
         id: 7,
-        name: "Smart City Apartment",
-        location: "Palayamkottai, Tirunelveli",
-        price: 16000,
-        rating: 4.6,
+        name: "Green View PG",
+        location: "Perungalathur, Chennai",
+        price: 7500,
+        category: "Hostel",
+        rating: 4.3,
         images: [
-            "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
-            "https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
-            "https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+            "https://images.unsplash.com/photo-1596276020587-8d4e6e6a17b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1540518614846-7eded433c457?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
         ],
-        description: "Modern apartment in the educational hub of South India. Close to colleges and hospitals.",
-        amenities: ["WiFi", "Lift", "Security", "Power Backup"]
+        description: "Budget-friendly PG accommodation near Zoho Corporation. Clean rooms and friendly atmosphere.",
+        amenities: ["RO Water", "Housekeeping", "Bike Parking", "TV Hall"]
     },
     {
         id: 8,
-        name: "Temple View Residency",
-        location: "Near Big Temple, Thanjavur",
-        price: 14000,
-        rating: 4.7,
+        name: "Cyber Park Tower",
+        location: "Electronic City, Bangalore (TN Border)",
+        price: 150000,
+        category: "IT Office",
+        rating: 4.9,
         images: [
-            "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
-            "https://images.unsplash.com/photo-1600596542815-22502385a987?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
-            "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+            "https://images.unsplash.com/photo-1486325212027-8081648a82eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1517502884422-41e157d2ed44?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
         ],
-        description: "Stay close to history with this comfortable residency near the Brihadeeswarar Temple.",
-        amenities: ["AC", "TV", "Hot Water", "Room Service"]
+        description: "World-class IT infrastructure for large enterprises. LEED certified green building.",
+        amenities: ["Concierge", "Helipad", "Gym", "Food Court", "Conference Hall"]
     },
     {
         id: 9,
-        name: "Fort City Bungalow",
-        location: "Sathuvachari, Vellore",
-        price: 24000,
-        rating: 4.5,
+        name: "Sea View Corporate Suite",
+        location: "ECR, Chennai",
+        price: 95000,
+        category: "IT Office",
+        rating: 4.8,
         images: [
-            "https://images.unsplash.com/photo-1600596542815-22502385a987?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
-            "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
-            "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+            "https://images.unsplash.com/photo-1577412647305-991150c7d163?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1497215842964-222b430dc094?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1519642918688-7e43b19245d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
         ],
-        description: "Spacious bungalow near VIT university. Ideal for professors or large families.",
-        amenities: ["Garden", "Garage", "Study Room", "WiFi"]
+        description: "Luxurious office space with a stunning view of the Bay of Bengal on East Coast Road.",
+        amenities: ["Sea View", "Valet Parking", "Meeting Lounge", "Private Lift"]
     },
     {
         id: 10,
-        name: "Coastal Breeze Home",
-        location: "Kottar, Nagercoil",
-        price: 19000,
-        rating: 4.8,
+        name: "Temple City Guest House",
+        location: "Simmakkal, Madurai",
+        price: 12000,
+        category: "Hostel",
+        rating: 4.2,
         images: [
-            "https://images.unsplash.com/photo-1512918760532-3edbed13588e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
-            "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
-            "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+            "https://images.unsplash.com/photo-1596276020587-8d4e6e6a17b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1505691938895-1cd5860c1d8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
         ],
-        description: "Enjoy the pleasant climate of Nagercoil in this well-ventilated home. Close to Kanyakumari highway.",
-        amenities: ["Balcony", "Garden", "Well Water", "CCTV"]
+        description: "Traditional yet modern guest house in the heart of Madurai. Close to Meenakshi Amman Temple.",
+        amenities: ["AC", "Veg Meals", "Temple View", "Travel Desk"]
+    },
+    {
+        id: 11,
+        name: "Kongu Co-Works",
+        location: "Gandhipuram, Coimbatore",
+        price: 18000,
+        category: "Coworking",
+        rating: 4.5,
+        images: [
+            "https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+        ],
+        description: "Vibrant coworking community in the industrial hub of Tamil Nadu's Manchester.",
+        amenities: ["Open Desk", "Private Cabin", "Event Space", "Café"]
+    },
+    {
+        id: 12,
+        name: "Emerald Event Hall",
+        location: "Adyar, Chennai",
+        price: 200000,
+        category: "Event",
+        rating: 4.7,
+        images: [
+            "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1505236858219-8359eb29e329?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+        ],
+        description: "Grand banquet hall suitable for corporate events, weddings, and parties. Located in prime Adyar.",
+        amenities: ["500 Seater", "Dining Hall", "Stage", "Audio System", "Changing Rooms"]
+    },
+    {
+        id: 13,
+        name: "Velachery Tech Park",
+        location: "Velachery, Chennai",
+        price: 90000,
+        category: "IT Office",
+        rating: 4.6,
+        images: [
+            "https://images.unsplash.com/photo-1504384308090-c54be385363d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1531973576160-7125cd663d86?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+        ],
+        description: "Conveniently located office space near Phoenix Mall. Great connectivity and amenities.",
+        amenities: ["Mall Access", "Food Court", "Parking", "Power Backup"]
+    },
+    {
+        id: 14,
+        name: "Salem Steel Towers",
+        location: "Fairlands, Salem",
+        price: 60000,
+        category: "IT Office",
+        rating: 4.3,
+        images: [
+            "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1556761175-4b46a8911a31?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+        ],
+        description: "Premium office space in the steel city. Ideal for regional offices and bank branches.",
+        amenities: ["Central Location", "Guest Parking", "Security", "Lift"]
+    },
+    {
+        id: 15,
+        name: "Marina Photography Studio",
+        location: "Mylapore, Chennai",
+        price: 30000,
+        category: "Studio",
+        rating: 4.9,
+        images: [
+            "https://images.unsplash.com/photo-1596524430615-b46476ddff6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+        ],
+        description: "Fully equipped photography and videography studio near Marina Beach. Natural light and green screen available.",
+        amenities: ["Lights", "Green Screen", "Makeup Room", "Prop Store"]
     }
 ];
 

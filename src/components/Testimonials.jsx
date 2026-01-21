@@ -2,23 +2,23 @@ const Testimonials = () => {
     const reviews = [
         {
             id: 1,
-            name: "Sarah Johnson",
+            name: "Priya Raman",
             role: "Startup Founder",
-            content: "We found our dream office space through RentSpace in less than 24 hours. The process was seamless and professional.",
+            content: "We found our dream office space in OMR through RentSpace in less than 24 hours. The process was seamless and professional.",
             avatar: "https://randomuser.me/api/portraits/women/44.jpg"
         },
         {
             id: 2,
-            name: "Michael Chen",
+            name: "Karthik Raja",
             role: "Retail Manager",
-            content: "The variety of high-traffic retail spots available here is unmatched. Boosted our sales by 40% after moving.",
+            content: "The variety of high-traffic retail spots available in T Nagar is unmatched. Boosted our sales by 40% after moving.",
             avatar: "https://randomuser.me/api/portraits/men/32.jpg"
         },
         {
             id: 3,
-            name: "Emily Davis",
+            name: "Anitha Suresh",
             role: "Freelance Designer",
-            content: "As a creative, I needed an inspiring studio. Found the perfect industrial loft that fits my budget perfectly.",
+            content: "As a creative, I needed an inspiring studio. Found the perfect place in Besant Nagar that fits my budget perfectly.",
             avatar: "https://randomuser.me/api/portraits/women/68.jpg"
         }
     ];

@@ -9,10 +9,10 @@ const HomePage = () => {
     const featuredShops = shops.slice(0, 3);
 
     const categories = [
-        { name: 'Office', icon: 'M19 21V5a2 2 0 012-2h-6v24h6a2 2 0 012-2z M17 9h2M17 13h2M17 17h2M5 21V7a2 2 0 012-2h6v20H7a2 2 0 01-2-2z M7 9h2M7 13h2M7 17h2' },
-        { name: 'Retail', icon: 'M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z' },
-        { name: 'Studio', icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z' },
-        { name: 'Warehouse', icon: 'M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4' },
+        { name: 'IT Office', icon: 'M19 21V5a2 2 0 012-2h-6v24h6a2 2 0 012-2z M17 9h2M17 13h2M17 17h2M5 21V7a2 2 0 012-2h6v20H7a2 2 0 01-2-2z M7 9h2M7 13h2M7 17h2' },
+        { name: 'Hostel', icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6' },
+        { name: 'Coworking', icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z' },
+        { name: 'Studio', icon: 'M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4' },
         { name: 'Event', icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z' },
     ];
 
@@ -21,16 +21,16 @@ const HomePage = () => {
             {/* Hero Section */}
             <section className="relative h-[600px] flex items-center justify-center bg-slate-900">
                 <img
-                    src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=2000"
-                    alt="Modern Office"
-                    className="absolute inset-0 w-full h-full object-cover opacity-40"
+                    src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=2000"
+                    alt="Modern Office in Tamil Nadu"
+                    className="absolute inset-0 w-full h-full object-cover opacity-30"
                 />
                 <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
                     <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                        Find Your Perfect Space to <br className="hidden md:block" /> Work & Grow
+                        Find Premium IT Offices & <br className="hidden md:block" /> Hostels in Namma Chennai
                     </h1>
-                    <p className="text-xl text-slate-200 mb-10">
-                        Discover thousands of premium office, retail, and creative spaces available for rent.
+                    <p className="text-xl text-slate-200 mb-10 max-w-2xl mx-auto">
+                        Discover world-class IT parks, office spaces, and comfortable hostels in OMR, Adyar, Anna Nagar, and across Tamil Nadu.
                     </p>
                 </div>
             </section>
@@ -42,7 +42,7 @@ const HomePage = () => {
 
             {/* Categories */}
             <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className="text-2xl font-bold text-slate-900 mb-8">Browse by Category</h2>
+                <h2 className="text-2xl font-bold text-slate-900 mb-8">Browse by Space Type</h2>
                 <div className="flex flex-wrap gap-6 justify-center md:justify-between">
                     {categories.map((cat, idx) => (
                         <div key={idx} className="cursor-pointer group flex flex-col items-center gap-3 min-w-[100px]">

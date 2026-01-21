@@ -1,10 +1,39 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useBooking } from '../context/BookingContext';
+import { useAuth } from '../context/AuthContext';
 import ShopCard from '../components/ShopCard';
 
 const ShopListPage = () => {
-    const { shops } = useBooking();
+    const { shops, addBooking } = useBooking();
+    const { user } = useAuth();
+    const navigate = useNavigate();
     const [filterCategory, setFilterCategory] = useState([]);
+
+    const handleBook = (shop) => {
+        if (!user) {
+            alert("Please login to book a shop.");
+            navigate('/login');
+            return;
+        }
+
+        if (window.confirm(`Confirm booking for ${shop.name}?\nMonthly Rent: ₹${shop.price.toLocaleString('en-IN')}`)) {
+            const booking = {
+                shopId: shop.id,
+                shopName: shop.name,
+                shopImage: shop.images ? shop.images[0] : shop.image,
+                location: shop.location,
+                date: new Date().toISOString().split('T')[0],
+                guests: "1 Person",
+                duration: 1,
+                totalPrice: shop.price
+            };
+
+            addBooking(booking);
+            alert("Booking Successful!");
+            navigate('/dashboard');
+        }
+    };
 
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -55,7 +84,7 @@ const ShopListPage = () => {
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                         {shops.map(shop => (
-                            <ShopCard key={shop.id} shop={shop} />
+                            <ShopCard key={shop.id} shop={shop} onBook={handleBook} />
                         ))}
                     </div>
                 </div>
