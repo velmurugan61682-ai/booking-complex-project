@@ -42,7 +42,9 @@ const BookingPage = () => {
             date: formData.date,
             guests: formData.guests,
             duration,
-            totalPrice
+            totalPrice,
+            userName: user.name,
+            userEmail: user.email
         });
 
         alert("Booking Confirmed!");

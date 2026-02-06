@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useBooking } from '../context/BookingContext';
 import { useAuth } from '../context/AuthContext';
 import ShopCard from '../components/ShopCard';
@@ -9,6 +9,9 @@ const ShopListPage = () => {
     const { user } = useAuth();
     const navigate = useNavigate();
     const [filterCategory, setFilterCategory] = useState([]);
+
+    const initialDisplayCount = 12;
+    const displayedShops = shops.slice(0, initialDisplayCount);
 
     const handleBook = (shop) => {
         if (!user) {
@@ -82,11 +85,25 @@ const ShopListPage = () => {
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                        {shops.map(shop => (
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                        {displayedShops.map(shop => (
                             <ShopCard key={shop.id} shop={shop} onBook={handleBook} />
                         ))}
                     </div>
+
+                    {shops.length > initialDisplayCount && (
+                        <div className="text-center">
+                            <Link
+                                to="/all-properties"
+                                className="inline-flex items-center gap-2 bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors font-medium"
+                            >
+                                View All Properties ({shops.length})
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                </svg>
+                            </Link>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

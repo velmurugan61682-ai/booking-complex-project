@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
 const AdminPage = () => {
-    const { shops, addShop, deleteShop } = useBooking();
+    const { shops, addShop, deleteShop, bookings } = useBooking();
     const { user } = useAuth();
     const navigate = useNavigate();
     const [isAdding, setIsAdding] = useState(false);
@@ -84,7 +84,9 @@ const AdminPage = () => {
             )}
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {shops.map(shop => (
+                {shops.map(shop => {
+                    const shopBookings = bookings.filter(b => b.shopId === shop.id);
+                    return (
                     <div key={shop.id} className="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden flex flex-col">
                         <div className="h-48 relative overflow-hidden group">
                             <img src={shop.images ? shop.images[0] : shop.image} alt={shop.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
@@ -98,13 +100,42 @@ const AdminPage = () => {
                                 <span className="bg-indigo-50 text-indigo-700 text-xs font-bold px-2 py-1 rounded-full">₹{shop.price.toLocaleString('en-IN')}/mo</span>
                             </div>
                             <p className="text-slate-500 text-sm mb-4">{shop.location}</p>
+                            
+                            {/* Bookings Section */}
+                            <div className="mb-4">
+                                <h4 className="font-semibold text-slate-800 text-sm mb-2">Recent Bookings ({shopBookings.length})</h4>
+                                {shopBookings.length > 0 ? (
+                                    <div className="space-y-2 max-h-32 overflow-y-auto">
+                                        {shopBookings.slice(0, 5).map(booking => (
+                                            <div key={booking.id} className="bg-slate-50 p-2 rounded text-xs">
+                                                <div className="flex justify-between items-center">
+                                                    <span className="font-medium text-slate-700">{booking.userName}</span>
+                                                    <span className={`px-1 py-0.5 rounded text-xs font-medium ${
+                                                        booking.status === 'Confirmed' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
+                                                    }`}>
+                                                        {booking.status}
+                                                    </span>
+                                                </div>
+                                                <p className="text-slate-500 mt-1">{booking.date}</p>
+                                            </div>
+                                        ))}
+                                        {shopBookings.length > 5 && (
+                                            <p className="text-slate-400 text-xs text-center">+{shopBookings.length - 5} more</p>
+                                        )}
+                                    </div>
+                                ) : (
+                                    <p className="text-slate-400 text-xs">No bookings yet</p>
+                                )}
+                            </div>
+                            
                             <div className="mt-auto flex justify-end gap-2 pt-4 border-t border-slate-100">
                                 <button className="text-indigo-600 text-sm font-medium hover:text-indigo-800 px-3 py-1">Edit</button>
                                 <button onClick={() => deleteShop(shop.id)} className="text-red-600 text-sm font-medium hover:text-red-800 px-3 py-1 bg-red-50 rounded hover:bg-red-100 transition-colors">Delete</button>
                             </div>
                         </div>
                     </div>
-                ))}
+                    );
+                })}
             </div>
         </div>
     );
